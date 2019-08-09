@@ -1,5 +1,4 @@
-import IPerson from '../interface/IPerson';
-
+import IPerson from './src/interface/IPerson';
 export default class ArrayUtils {
 
   /**
@@ -44,6 +43,6 @@ export default class ArrayUtils {
     for (let j = 0;j<t.length;j++) {
       c.push(callback(t[j]))
     }
-    return c
+
   }
 }

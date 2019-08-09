@@ -1,5 +1,5 @@
 // process.env.NODE_ENV = 'testing'
-import IPerson from "../../src/interface/IPerson";
+import IPerson from '../../src/interface/IPerson';
 
 const expect = require('chai').expect
 import ArrayUtils from '../../src/array/ArrayUtils'
