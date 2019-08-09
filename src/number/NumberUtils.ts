@@ -1,4 +1,6 @@
-export default class NumberUtil {
+import NumberUtilSolution from "../implementation/number/NumberUtils";
+
+class NumberUtil {
 
   static sum (t: number[]): number {
     return 0
@@ -41,3 +43,6 @@ export default class NumberUtil {
     return false
   }
 }
+
+
+export default process.env.PERSON === 'buddy' ? NumberUtilSolution : NumberUtil
