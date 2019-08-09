@@ -1,6 +1,9 @@
 import IPerson from '../interface/IPerson';
+import dotenv from 'dotenv'
+import ArrayUtilsSolution from "../implementation/array/ArrayUtilsSolution";
+dotenv.config()
 
-export default class ArrayUtils {
+class ArrayUtils {
 
   /**
    * @param persons
@@ -41,3 +44,5 @@ export default class ArrayUtils {
     return t
   }
 }
+
+export default process.env.PERSON === 'buddy' ? ArrayUtilsSolution : ArrayUtils

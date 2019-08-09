@@ -36,6 +36,9 @@ describe('NumberUtils', () => {
     expect(NumberUtils.min([1,3,4,8,5,17])).to.equal(1)
     expect(NumberUtils.min([3,4,8,5,17])).to.equal(3)
     expect(NumberUtils.min([4,8,5,17])).to.equal(4)
+  })
+
+  it('[min] should throw Error when array is empty', () => {
     assert.throws(() => NumberUtils.min([]), Error)
   })
 
@@ -45,6 +48,9 @@ describe('NumberUtils', () => {
     expect(NumberUtils.max([1,3,4,5,0])).to.equal(5)
     expect(NumberUtils.max([1,3,4,0])).to.equal(4)
     expect(NumberUtils.max([1,3,0])).to.equal(3)
+  })
+
+  it('[max] should throw Error when array is empty', () => {
     assert.throws(() => NumberUtils.max([]), Error)
   })
 

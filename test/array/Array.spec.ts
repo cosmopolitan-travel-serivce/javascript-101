@@ -1,9 +1,8 @@
 // process.env.NODE_ENV = 'testing'
 import IPerson from "../../src/interface/IPerson";
+import ArrayUtils from '../../src/array/ArrayUtils'
 
 const expect = require('chai').expect
-import ArrayUtils from '../../src/array/ArrayUtils'
-import NumberUtils from "../../src/number/NumberUtils";
 // import faker from 'faker'
 // import 'faker/locale/en'
 
