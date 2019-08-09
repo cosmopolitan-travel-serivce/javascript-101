@@ -1,6 +1,5 @@
-import NumberUtilSolution from "../implementation/number/NumberUtils";
 
-class NumberUtil {
+export class NumberUtils {
 
   static sum (t: number[]): number {
     let som = 0
@@ -24,14 +23,16 @@ class NumberUtil {
    * @param t
    */
   static min (t: number[]): number {
+    const error:any = Error;
+    if (t[0]== null) {
+      throw new Error('')
+    }
+
     let min:number = t[0]
     for (let i = 1;i<t.length;i++) {
       if (t[i]<min) {
         min = t[i]
       }
-    }
-    if (t.length==0) {
-      return 0;
     }
     return min
   }
@@ -68,4 +69,7 @@ class NumberUtil {
 }
 
 
-export default process.env.PERSON === 'buddy' ? NumberUtilSolution : NumberUtil
+export class NumberUtilsSolution extends NumberUtils {}
+
+
+export default process.env.PERSON === 'buddy' ? NumberUtilsSolution : NumberUtils
