@@ -3,12 +3,19 @@ import NumberUtilSolution from "../implementation/number/NumberUtils";
 class NumberUtil {
 
   static sum (t: number[]): number {
-    return 0
+    let som = 0
+    for (let i = 0;i<t.length;i++) {
+           som += t[i]
+    }
+    return som
   }
 
 
   static average (t: number[]): number {
-    return 0
+    if (t.length==0) {
+      return 0
+    }
+    return this.sum(t)/t.length
   }
 
 
@@ -17,7 +24,16 @@ class NumberUtil {
    * @param t
    */
   static min (t: number[]): number {
-    return 0
+    let min:number = t[0]
+    for (let i = 1;i<t.length;i++) {
+      if (t[i]<min) {
+        min = t[i]
+      }
+    }
+    if (t.length==0) {
+      return 0;
+    }
+    return min
   }
 
 
@@ -36,7 +52,14 @@ class NumberUtil {
    * @param element
    */
   static findIndex (t: number[], element: number): number {
-    return 0
+    let b = -1
+    for (let i = 0;i<t.length;i++) {
+      if (t[i]==element) {
+        b = i;
+        break;
+      }
+    }
+    return b
   }
 
   static isPrime (n: number): boolean {
