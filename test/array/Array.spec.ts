@@ -47,8 +47,8 @@ describe('Array', () => {
         last_name: 'Wade'
       }]
     let transfromed:IPerson[] = ArrayUtils.personsWithLastNameUpperCased(persons)
-    let senghor:IPerson = transfromed.find(person => person.id === 1)
-    let wade:IPerson = transfromed.find(person => person.id === 2)
+    let senghor:IPerson = transfromed.find(person => person.id === 1) as IPerson
+    let wade:IPerson = transfromed.find(person => person.id === 2) as IPerson
     expect(transfromed.length).to.equal(persons.length)
     expect(senghor.last_name).to.contains('SENGHOR')
     expect(wade.last_name).to.contains('WADE')
@@ -59,23 +59,21 @@ describe('Array', () => {
     let expected: number[] = [0,1,3,4,5,8,17]
     let sorted: number[] = ArrayUtils.sortNumbers(t)
     expect(sorted.length).to.equal(expected.length)
-    for (let i = 0; i < sorted.length; i++) {
-      expect(sorted[i]).to.equal(expected[i])
-    }
+    expect(sameArrayValues(sorted, expected)).to.equal(true)
   })
 
   it('[map] with double callback should return double of array', () => {
     const t: number[] = [1,3,4,8,5,0,17]
-    const expected: number[] = [2,6,8,10,0,34]
+    const expected: number[] = [2,6,8,16,10,0,34]
     const sameArray = sameArrayValues(expected, ArrayUtils.map(t, function (e: number) {
       return e*2;
     }))
     expect(sameArray).to.equal(true)
   })
 
-  it('[map] with triplet callback should return double of array', () => {
+  it('[map] with triplet callback should return triplet of array', () => {
     const t: number[] = [1,3,4,8,5,0,17]
-    const expected: number[] = [3,9,12,32,15,0,51]
+    const expected: number[] = [3,9,12,24,15,0,51]
     const sameArray = sameArrayValues(expected, ArrayUtils.map(t, function (e: number) {
       return e*3;
     }))

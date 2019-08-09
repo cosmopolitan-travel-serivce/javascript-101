@@ -38,23 +38,6 @@ export default class NumberUtil {
   }
 
   static isPrime (n: number): boolean {
-    let b = Math.sqrt(n)
-    let a = 0
-    if (n < 2) {
-      return false
-    }
-    if (n == 2) {
-      return true
-    }
-    if (n % 2 == 0) {
-      return false
-    }
-    for (let i = 3; i < b; i += 2) {
-      a = n % i
-      if (a == 0) {
-        return false
-      }
-    }
-    return true
+    return false
   }
 }
