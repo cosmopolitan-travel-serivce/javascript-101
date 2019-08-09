@@ -61,9 +61,11 @@ typings/
 .next
 
 ./solution
-yarn.lock
+#yarn.lock
 package-lock.json
 .vs
 .code
 .idea
-src/implementation
+src/implementation/array/*
+src/implementation/number/*
+.env

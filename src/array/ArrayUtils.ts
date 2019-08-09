@@ -1,6 +1,9 @@
 import IPerson from '../interface/IPerson';
+import dotenv from 'dotenv'
+import ArrayUtilsSolution from "../implementation/array/ArrayUtilsSolution";
+dotenv.config()
 
-export default class ArrayUtils {
+class ArrayUtils {
 
   /**
    * @param persons
@@ -32,10 +35,11 @@ export default class ArrayUtils {
     name = firstname +' '+lastname
     m= name.split(' ')
    per.push({
+         id:persons[i].id,
         first_name: m.slice(0,m.length-1).join(' '),
         last_name:m[m.length-1]
    })
-
+  return  per
   }
 
   /**
@@ -66,4 +70,14 @@ export default class ArrayUtils {
     }
     return c
   }
+
+  /**
+   *
+   * @param t
+   */
+  static sortByAge (t: IPerson[]): IPerson[] {
+    return t
+  }
 }
+
+export default process.env.PERSON === 'buddy' ? ArrayUtilsSolution : ArrayUtils
