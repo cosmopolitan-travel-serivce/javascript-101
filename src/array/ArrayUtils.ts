@@ -7,9 +7,7 @@ export default class ArrayUtils {
    * @returns string[]
    */
   static lastNames (persons: IPerson[]): string[] {
-    return persons.map((person: IPerson) => {
-      return person.last_name
-    })
+    return []
   }
 
   /**
@@ -17,11 +15,7 @@ export default class ArrayUtils {
    * @param persons
    */
   static personsWithLastNameUpperCased (persons: IPerson[]) {
-    return persons.map(function (person) {
-      return Object.assign({}, person, {
-        last_name: person.last_name.toUpperCase()
-      })
-    });
+    return []
   }
 
   /**
@@ -31,7 +25,11 @@ export default class ArrayUtils {
     return []
   }
 
-  static map (t: number[], callack: any): any {
-    return t
+  /**
+   * @param t
+   * @param callback
+   */
+  static map (t: number[], callback: any): any {
+    return []
   }
 }

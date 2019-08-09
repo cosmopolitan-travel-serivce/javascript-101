@@ -16,7 +16,7 @@ describe('NumberUtils', () => {
   })
 
   it('Average of empty array of number should return 0', () => {
-   let t = []
+   let t: number[] = []
     expect(NumberUtils.average(t)).to.equal(0)
   })
 
@@ -50,7 +50,7 @@ describe('NumberUtils', () => {
 
   it('[isPrime] should return prime number', () => {
     expect(NumberUtils.isPrime(1)).to.equal(false)
-    expect(NumberUtils.isPrime(2)).to.equal(false)
+    expect(NumberUtils.isPrime(2)).to.equal(true)
     expect(NumberUtils.isPrime(3)).to.equal(true)
     expect(NumberUtils.isPrime(7)).to.equal(true)
     expect(NumberUtils.isPrime(8)).to.equal(false)
