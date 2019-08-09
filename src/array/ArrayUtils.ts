@@ -32,4 +32,12 @@ export default class ArrayUtils {
   static map (t: number[], callback: any): any {
     return []
   }
+
+  /**
+   *
+   * @param t
+   */
+  static sortByAge (t: IPerson[]): IPerson[] {
+    return t
+  }
 }
