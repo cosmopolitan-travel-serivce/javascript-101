@@ -9,7 +9,6 @@ export class NumberUtils {
     return som
   }
 
-
   static average (t: number[]): number {
     if (t.length==0) {
       return 0
@@ -43,14 +42,23 @@ export class NumberUtils {
    * @param t
    */
   static max (t: number[]): number {
-    return 0
+    const error:any = Error;
+    if (t[0]== null) {
+      throw new Error('')
+    }
+    let max:number = t[0]
+    for (let i = 1;i<t.length;i++) {
+      if (t[i]>max) {
+        max = t[i]
+      }
+    }
+    return max
   }
 
   /**
    * -1 if not found
    * otherwise index of element in array t
-   * @param t
-   * @param element
+   * @param
    */
   static findIndex (t: number[], element: number): number {
     let b = -1
@@ -64,7 +72,25 @@ export class NumberUtils {
   }
 
   static isPrime (n: number): boolean {
-    return false
+    let b = Math.sqrt(n)
+    let a = 0
+    if (n<2) {
+        return false
+    }
+    if (n==2) {
+        return true
+    }
+    if (n%2==0) {
+        return false
+    }
+    for (let i = 3; i<b;i +=2) {
+        a = n%i
+        if (a==0) {
+            return false
+        }
+    }
+    return true
+
   }
 }
 
