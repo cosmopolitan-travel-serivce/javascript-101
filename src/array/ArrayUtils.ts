@@ -29,7 +29,7 @@ class ArrayUtils {
    return resul
     }
   /**
-   * @param t
+   * @param 
    */
   static sortNumbers (t: number[]): number[] {
     let tmp;

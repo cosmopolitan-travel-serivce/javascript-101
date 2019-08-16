@@ -64,13 +64,12 @@ export class NumberUtils {
     let b = -1
     for (let i = 0;i<t.length;i++) {
       if (t[i]==element) {
-        b = i;
+         b = i;
         break;
       }
     }
     return b
   }
-
   static isPrime (n: number): boolean {
     let b = Math.sqrt(n)
     let a = 0
