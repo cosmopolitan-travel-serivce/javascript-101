@@ -8,7 +8,6 @@ export class NumberUtils {
     }
     return som
   }
-
   static average (t: number[]): number {
     if (t.length==0) {
       return 0
@@ -19,22 +18,54 @@ export class NumberUtils {
 
   /**
    * @throws Error when array is empty
-   * @param t
+   * @param 
    */
   static min (t: number[]): number {
     const error:any = Error;
-    if (t[0]== null) {
-      throw new Error('')
+    let na:any[] = [];
+    let tab:number[] = [];
+    let min: number = 0;
+    let i:number
+   /* if (t[0]== null) {
+      throw new Error('Error when array is empty')
     }
-
-    let min:number = t[0]
-    for (let i = 1;i<t.length;i++) {
-      if (t[i]<min) {
-        min = t[i]
+    for(let i= 0;i<t.length;i++) {
+      if(isNaN(t[i])) {
+        tab.push(t[i])
+        if(tab.length!=0) {
+          throw new Error('The elements of arrays contains a NaN')
+        }
       }
+      na.push(!(isNaN(t[i])))
+    } 
+    for(let j =1 ;na.length;j++) {
+       if(na[0]==null) {
+         throw new Error('')
+       }
+       if(na[j]<min) {
+         min = na[j]
+       }
     }
-    return min
+    return min*/
+  
+    if (t[0]== null) {
+      throw new Error('Error when array is empty')
+    }
+    for (i = 0;i<t.length;i++) {
+      if(isNaN(t[i])) {
+        na.push(t[i])
+        if(na.length!=0) {
+          throw new Error('The elements of arrays contains a NaN')
+        }
+     }
+     if (t[i]<=t[0]) {
+      min = t[i]
+    }
   }
+  return min 
+}
+   
+    
 
 
   /**
