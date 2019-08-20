@@ -1,8 +1,6 @@
 import IPerson from '../interface/IPerson';
 import dotenv from 'dotenv'
-import ArrayUtilsSolution from "../implementation/array/ArrayUtilsSolution";
 dotenv.config()
-
 class ArrayUtils {
 
   /**
@@ -20,30 +18,18 @@ class ArrayUtils {
    * @param persons
    */
   static personsWithLastNameUpperCased (persons: IPerson[]) : IPerson[]{
-    let n:string ="";
-    let i:number;
-    let m:string[]= [];
-    let per:IPerson[] = [];
-    let firstname:string = "";
-    let lastname:string = "";
-    let name :string;
-
-   for (i = 0;i<persons.length;i++) {
-        firstname = persons[i].first_name
-        lastname = persons[i].last_name.toUpperCase()
-   }
-    name = firstname +' '+lastname
-    m= name.split(' ')
-   per.push({
-         id:persons[i].id,
-        first_name: m.slice(0,m.length-1).join(' '),
-        last_name:m[m.length-1]
-   })
-  return  per
-  }
-
+        let i:number
+        let resul:IPerson[] = []
+        for(i=0;i<persons.length;i++) {
+               resul.push({id:persons[i].id,
+                first_name:persons[i].first_name,
+                last_name:persons[i].last_name.toUpperCase()
+      })
+        }     
+   return resul
+    }
   /**
-   * @param t
+   * @param 
    */
   static sortNumbers (t: number[]): number[] {
     let tmp;
@@ -79,5 +65,7 @@ class ArrayUtils {
     return t
   }
 }
+
+export class ArrayUtilsSolution extends ArrayUtils {}
 
 export default process.env.PERSON === 'buddy' ? ArrayUtilsSolution : ArrayUtils

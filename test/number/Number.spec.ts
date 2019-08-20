@@ -42,6 +42,16 @@ describe('NumberUtils', () => {
     assert.throws(() => NumberUtils.min([]), Error)
   })
 
+
+  it('[min] of NaN[] should throw error', () => {
+    assert.throws(() => NumberUtils.min([NaN, NaN]), Error)
+  })
+
+  it('[min] of array of NaN and a number should return that number', () => {
+    expect(NumberUtils.min([NaN, 0])).to.equal(0)
+    expect(NumberUtils.min([NaN, 4, 7, 2])).to.equal(2)
+  })
+
   it('[max] should return smallest value in array', () => {
     expect(NumberUtils.max([1,3,4,8,5,0,17])).to.equal(17)
     expect(NumberUtils.max([1,3,4,8,5,0])).to.equal(8)
@@ -51,7 +61,17 @@ describe('NumberUtils', () => {
   })
 
   it('[max] should throw Error when array is empty', () => {
-    assert.throws(() => NumberUtils.max([]), Error)
+    assert.throws(() => NumberUtils.max([parseInt('')]), Error)
+  })
+
+
+  it('[max] of NaN[] should throw error', () => {
+    assert.throws(() => NumberUtils.max([NaN, NaN]), Error)
+  })
+
+  it('[max] of array of NaN and a number should return that number', () => {
+    expect(NumberUtils.max([NaN, 10, 4])).to.equal(10)
+    expect(NumberUtils.max([NaN, 4, 7, 2])).to.equal(7)
   })
 
   it('[isPrime] should return prime number', () => {

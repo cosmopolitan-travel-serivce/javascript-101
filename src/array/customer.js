@@ -12,7 +12,7 @@ for (var i = 0;i<person.length;i++) {
 for (var k=0;k<rs.length;k++) {
     for (var imin =k;imin<rs.length;imin++) {
         if (rs[k]>rs[imin]) {
-            tmp = rs[k]
+            tmp = rs[k]lastName.split('')
             rs[k] = rs[imin]
             rs[imin] = tmp
         }
