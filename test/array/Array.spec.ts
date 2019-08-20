@@ -102,34 +102,34 @@ describe('Array', () => {
     it('should return elements of array that are even (element mod 2 == 0)', () => {
       expect(evens.length).to.equal(5)
     })
-    it('filterEven(range(1, 10)) should of contain 1', () => {
+    it('filterEven(range(1, 10)) should not contain 1', () => {
       expect(evens.includes(1)).to.equal(false)
     })
-    it('filterEven(range(1, 10)) should of contain 2', () => {
+    it('filterEven(range(1, 10)) should contain 2', () => {
       expect(evens.includes(2)).to.equal(true)
     })
-    it('filterEven(range(1, 10)) should of contain 3', () => {
+    it('filterEven(range(1, 10)) should not contain 3', () => {
       expect(evens.includes(3)).to.equal(false)
     })
-    it('filterEven(range(1, 10)) should of contain 4', () => {
+    it('filterEven(range(1, 10)) should contain 4', () => {
       expect(evens.includes(4)).to.equal(true)
     })
-    it('filterEven(range(1, 10)) should of contain 5', () => {
+    it('filterEven(range(1, 10)) should not contain 5', () => {
       expect(evens.includes(5)).to.equal(false)
     })
-    it('filterEven(range(1, 10)) should of contain 6', () => {
+    it('filterEven(range(1, 10)) should contain 6', () => {
       expect(evens.includes(6)).to.equal(true)
     })
-    it('filterEven(range(1, 10)) should of contain 7', () => {
+    it('filterEven(range(1, 10)) should not contain 7', () => {
       expect(evens.includes(7)).to.equal(false)
     })
-    it('filterEven(range(1, 10)) should of contain 8', () => {
+    it('filterEven(range(1, 10)) should contain 8', () => {
       expect(evens.includes(8)).to.equal(true)
     })
-    it('filterEven(range(1, 10)) should of contain 9', () => {
+    it('filterEven(range(1, 10)) should not contain 9', () => {
       expect(evens.includes(9)).to.equal(false)
     })
-    it('filterEven(range(1, 10)) should of contain 10', () => {
+    it('filterEven(range(1, 10)) should contain 10', () => {
       expect(evens.includes(10)).to.equal(true)
     })
   })
@@ -139,34 +139,34 @@ describe('Array', () => {
     it('should return elements of array that are even (element mod 2 !== 0)', () => {
       expect(odds.length).to.equal(5)
     })
-    it('filterOdd(range(1, 10)) should of contain 1', () => {
+    it('filterOdd(range(1, 10)) should contain 1', () => {
       expect(odds.includes(1)).to.equal(true)
     })
-    it('filterOdd(range(1, 10)) should of contain 2', () => {
+    it('filterOdd(range(1, 10)) should not contain 2', () => {
       expect(odds.includes(2)).to.equal(false)
     })
-    it('filterOdd(range(1, 10)) should of contain 3', () => {
+    it('filterOdd(range(1, 10)) should contain 3', () => {
       expect(odds.includes(3)).to.equal(true)
     })
-    it('filterOdd(range(1, 10)) should of contain 4', () => {
+    it('filterOdd(range(1, 10)) should not contain 4', () => {
       expect(odds.includes(4)).to.equal(false)
     })
-    it('filterOdd(range(1, 10)) should of contain 5', () => {
+    it('filterOdd(range(1, 10)) should contain 5', () => {
       expect(odds.includes(5)).to.equal(true)
     })
-    it('filterOdd(range(1, 10)) should of contain 6', () => {
+    it('filterOdd(range(1, 10)) should not contain 6', () => {
       expect(odds.includes(6)).to.equal(false)
     })
-    it('filterOdd(range(1, 10)) should of contain 7', () => {
+    it('filterOdd(range(1, 10)) should contain 7', () => {
       expect(odds.includes(7)).to.equal(true)
     })
-    it('filterOdd(range(1, 10)) should of contain 8', () => {
+    it('filterOdd(range(1, 10)) should not contain 8', () => {
       expect(odds.includes(8)).to.equal(false)
     })
-    it('filterOdd(range(1, 10)) should of contain 9', () => {
+    it('filterOdd(range(1, 10)) should contain 9', () => {
       expect(odds.includes(9)).to.equal(true)
     })
-    it('filterOdd(range(1, 10)) should of contain 10', () => {
+    it('filterOdd(range(1, 10)) should not contain 10', () => {
       expect(odds.includes(10)).to.equal(false)
     })
   })
@@ -176,34 +176,34 @@ describe('Array', () => {
     it('should return elements of array that are even (element mod 3 == 0)', () => {
       expect(div3.length).to.equal(3)
     })
-    it('filterDiv3(range(1, 10)) should of contain 1', () => {
+    it('filterDiv3(range(1, 10)) should not contain 1', () => {
       expect(div3.includes(1)).to.equal(false)
     })
-    it('filterDiv3(range(1, 10)) should of contain 2', () => {
+    it('filterDiv3(range(1, 10)) should not contain 2', () => {
       expect(div3.includes(2)).to.equal(false)
     })
-    it('filterDiv3(range(1, 10)) should of contain 3', () => {
+    it('filterDiv3(range(1, 10)) should contain 3', () => {
       expect(div3.includes(3)).to.equal(true)
     })
-    it('filterDiv3(range(1, 10)) should of contain 4', () => {
+    it('filterDiv3(range(1, 10)) should not contain 4', () => {
       expect(div3.includes(4)).to.equal(false)
     })
-    it('filterDiv3(range(1, 10)) should of contain 5', () => {
+    it('filterDiv3(range(1, 10)) should not contain 5', () => {
       expect(div3.includes(5)).to.equal(false)
     })
-    it('filterDiv3(range(1, 10)) should of contain 6', () => {
+    it('filterDiv3(range(1, 10)) should contain 6', () => {
       expect(div3.includes(6)).to.equal(true)
     })
-    it('filterDiv3(range(1, 10)) should of contain 7', () => {
+    it('filterDiv3(range(1, 10)) should not contain 7', () => {
       expect(div3.includes(7)).to.equal(false)
     })
-    it('filterDiv3(range(1, 10)) should of contain 8', () => {
+    it('filterDiv3(range(1, 10)) should not contain 8', () => {
       expect(div3.includes(8)).to.equal(false)
     })
-    it('filterDiv3(range(1, 10)) should of contain 9', () => {
+    it('filterDiv3(range(1, 10)) should contain 9', () => {
       expect(div3.includes(9)).to.equal(true)
     })
-    it('filterDiv3(range(1, 10)) should of contain 10', () => {
+    it('filterDiv3(range(1, 10)) should not contain 10', () => {
       expect(div3.includes(10)).to.equal(false)
     })
   })
@@ -233,7 +233,7 @@ describe('Array', () => {
     let numbers: number[] = ArrayUtils.filterDiv5(inputs)
     const expected = [5, 10]
     const notExpected = inputs.filter(n => !expected.includes(n))
-    it('should return elements of array that are even (element mod 4 == 0)', () => {
+    it('should return elements of array that are even (element mod 5 == 0)', () => {
       expect(numbers.length).to.equal(2)
     })
     it('filterDiv5(range(1, 10)) should contain ' + expected.join(', '), () => {
