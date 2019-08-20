@@ -147,12 +147,12 @@ describe('Array', () => {
       full_name: 'Kouna Fall'
     }]
 
-    it('should return IPerson with full_name property         personA.full_name === personB.full_name\n on each previous object', () => {
+    it('should return IPerson with full_name property personA.full_name === personB.full_name\n on each previous object', () => {
       expect(persons.length).to.equal(expected.length)
       const comparePerson = (personA: IPerson, personB: IPerson) => {
         return personA.id === personB.id &&
          personA.first_name === personB.first_name &&
-         personA.last_name === personB.last_name &&
+         personA.last_name === personB.last_name
       }
       expect(persons[0].full_name).to.equal(expected[0].full_name)
       expect(comparePerson(persons[0], expected[0])).to.equal(true)
@@ -163,7 +163,4 @@ describe('Array', () => {
     })
 
   })
-
-
-
 })

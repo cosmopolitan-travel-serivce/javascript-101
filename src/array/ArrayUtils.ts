@@ -58,7 +58,7 @@ class ArrayUtils {
      * @param callback
      */
     static map(t: number[], callback: any): any {
-        let c = []
+        let c = [];
         for (let j = 0; j < t.length; j++) {
             c.push(callback(t[j]))
         }
@@ -74,7 +74,19 @@ class ArrayUtils {
     }
 
     static adults (t: IPerson[]): IPerson[] {
-        return []
+        let majeur : IPerson[] = [];
+        for (let i:number = 0; i < t.length; i++) {
+            if (t[i].age>=18) {
+                majeur.push({
+                    id: t[i].id,
+                    first_name: t[i].first_name,
+                    last_name: t[i].last_name,
+                    age:t[i].age
+                })
+            }
+        }
+        return majeur
+
     }
 
     static range(from: number, to: number): number[] {

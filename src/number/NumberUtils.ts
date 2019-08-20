@@ -23,7 +23,8 @@ export class NumberUtils {
      * @param t
      */
     static min(t: number[]): number {
-        let na: number[] = t.filter(function (j) {
+        let na: number[] = [];
+        na = t.filter(function (j) {
             return !isNaN(j)
         });
         if (na.length == 0) {
@@ -44,14 +45,16 @@ export class NumberUtils {
      * @param t
      */
     static max(t: number[]): number {
-        const error: any = Error;
-        if (t[0] == null) {
-            throw new Error('')
+        let na: number[] = t.filter(function (j) {
+            return !isNaN(j)
+        });
+        if (na.length == 0) {
+            throw new Error('Error when array is empty')
         }
-        let max: number = t[0]
-        for (let i = 1; i < t.length; i++) {
-            if (t[i] > max) {
-                max = t[i]
+        let max: number = na[0];
+        for (let k: number = 1; k < na.length; k++) {
+            if (na[k] >  max) {
+                max = na[k]
             }
         }
         return max
