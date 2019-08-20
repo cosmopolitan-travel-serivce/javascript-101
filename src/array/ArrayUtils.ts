@@ -32,10 +32,6 @@ class ArrayUtils {
         return resul
     }
 
-    static personsWithFullName (persons: IPerson[]): IPerson[] {
-        return []
-    }
-
     /**
      * @param
      */
@@ -76,7 +72,7 @@ class ArrayUtils {
     static adults (t: IPerson[]): IPerson[] {
         let majeur : IPerson[] = [];
         for (let i:number = 0; i < t.length; i++) {
-            if (t[i].age>=18) {
+            if (t[i].age!>=18) {
                 majeur.push({
                     id: t[i].id,
                     first_name: t[i].first_name,
@@ -96,9 +92,14 @@ class ArrayUtils {
         }
         return dump
     }
+
+
+    static personsWithFullName (persons: IPerson[]): IPerson[] {
+        return []
+    }
+
 }
 
-export class ArrayUtilsSolution extends ArrayUtils {
-}
+export class ArrayUtilsSolution extends ArrayUtils {}
 
 export default process.env.PERSON === 'buddy' ? ArrayUtilsSolution : ArrayUtils

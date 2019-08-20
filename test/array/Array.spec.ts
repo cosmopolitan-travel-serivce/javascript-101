@@ -19,65 +19,65 @@ const sameArrayValues = (a: number[], b: number[]) => {
 }
 
 describe('Array', () => {
-  // it('map returns last name', () => {
-  //   let persons: IPerson[] = [{
-  //     id: 1,
-  //       first_name: 'Leopold Sedar', //faker.name.firstName()
-  //       last_name: 'Senghor' // faker.name.lastName()
-  //     }, {
-  //     id: 1,
-  //       first_name: 'Abdoulaye',
-  //       last_name: 'Wade'
-  //     }]
-  //   let lastNames: string[] = ArrayUtils.lastNames(persons)
-  //   expect(lastNames.length).to.equal(persons.length)
-  //   expect(lastNames).to.contains('Senghor')
-  //   expect(lastNames).to.contains('Wade')
-  // })
-  //
-  // it('[personsWithLastNameUpperCased] map transform Person last name to uppercase', () => {
-  //   let persons: IPerson[] = [{
-  //     id: 1,
-  //       first_name: 'Leopold Sedar',
-  //       last_name: 'Senghor'
-  //     }, {
-  //     id: 2,
-  //       first_name: 'Abdoulaye',
-  //       last_name: 'Wade'
-  //     }]
-  //   let transfromed:IPerson[] = ArrayUtils.personsWithLastNameUpperCased(persons)
-  //   let senghor:IPerson = transfromed.find(person => person.id === 1) as IPerson
-  //   let wade:IPerson = transfromed.find(person => person.id === 2) as IPerson
-  //   expect(transfromed.length).to.equal(persons.length)
-  //   expect(senghor.last_name).to.contains('SENGHOR')
-  //   expect(wade.last_name).to.contains('WADE')
-  // })
-  //
-  // it('[sortNumbers] should sort array of number in order ASC', () => {
-  //   let t: number[] = [1,3,4,8,5,0,17]
-  //   let expected: number[] = [0,1,3,4,5,8,17]
-  //   let sorted: number[] = ArrayUtils.sortNumbers(t)
-  //   expect(sorted.length).to.equal(expected.length)
-  //   expect(sameArrayValues(sorted, expected)).to.equal(true)
-  // })
-  //
-  // it('[map] with double callback should return double of array', () => {
-  //   const t: number[] = [1,3,4,8,5,0,17]
-  //   const expected: number[] = [2,6,8,16,10,0,34]
-  //   const sameArray = sameArrayValues(expected, ArrayUtils.map(t, function (e: number) {
-  //     return e*2;
-  //   }))
-  //   expect(sameArray).to.equal(true)
-  // })
-  //
-  // it('[map] with triplet callback should return triplet of array', () => {
-  //   const t: number[] = [1,3,4,8,5,0,17]
-  //   const expected: number[] = [3,9,12,24,15,0,51]
-  //   const sameArray = sameArrayValues(expected, ArrayUtils.map(t, function (e: number) {
-  //     return e*3;
-  //   }))
-  //   expect(sameArray).to.equal(true)
-  // })
+  it('map returns last name', () => {
+    let persons: IPerson[] = [{
+      id: 1,
+        first_name: 'Leopold Sedar', //faker.name.firstName()
+        last_name: 'Senghor' // faker.name.lastName()
+      }, {
+      id: 1,
+        first_name: 'Abdoulaye',
+        last_name: 'Wade'
+      }]
+    let lastNames: string[] = ArrayUtils.lastNames(persons)
+    expect(lastNames.length).to.equal(persons.length)
+    expect(lastNames).to.contains('Senghor')
+    expect(lastNames).to.contains('Wade')
+  })
+
+  it('[personsWithLastNameUpperCased] map transform Person last name to uppercase', () => {
+    let persons: IPerson[] = [{
+      id: 1,
+        first_name: 'Leopold Sedar',
+        last_name: 'Senghor'
+      }, {
+      id: 2,
+        first_name: 'Abdoulaye',
+        last_name: 'Wade'
+      }]
+    let transfromed:IPerson[] = ArrayUtils.personsWithLastNameUpperCased(persons)
+    let senghor:IPerson = transfromed.find(person => person.id === 1) as IPerson
+    let wade:IPerson = transfromed.find(person => person.id === 2) as IPerson
+    expect(transfromed.length).to.equal(persons.length)
+    expect(senghor.last_name).to.contains('SENGHOR')
+    expect(wade.last_name).to.contains('WADE')
+  })
+
+  it('[sortNumbers] should sort array of number in order ASC', () => {
+    let t: number[] = [1,3,4,8,5,0,17]
+    let expected: number[] = [0,1,3,4,5,8,17]
+    let sorted: number[] = ArrayUtils.sortNumbers(t)
+    expect(sorted.length).to.equal(expected.length)
+    expect(sameArrayValues(sorted, expected)).to.equal(true)
+  })
+
+  it('[map] with double callback should return double of array', () => {
+    const t: number[] = [1,3,4,8,5,0,17]
+    const expected: number[] = [2,6,8,16,10,0,34]
+    const sameArray = sameArrayValues(expected, ArrayUtils.map(t, function (e: number) {
+      return e*2;
+    }))
+    expect(sameArray).to.equal(true)
+  })
+
+  it('[map] with triplet callback should return triplet of array', () => {
+    const t: number[] = [1,3,4,8,5,0,17]
+    const expected: number[] = [3,9,12,24,15,0,51]
+    const sameArray = sameArrayValues(expected, ArrayUtils.map(t, function (e: number) {
+      return e*3;
+    }))
+    expect(sameArray).to.equal(true)
+  })
 
   describe('Range', () => {
     const range: number[] = ArrayUtils.range(1, 10)
@@ -108,7 +108,7 @@ describe('Array', () => {
     }))
     const results: IPerson[] = ArrayUtils.adults(persons)
     it('should return adults only (age >= 18)', () => {
-      expect(results.length).to.equal(5)
+      expect(results.length).to.equal(4)
     })
     it('should not contain only person with age < 18)', () => {
       expect(results.some(person => person.age! < 18)).to.equal(false)
@@ -147,7 +147,7 @@ describe('Array', () => {
       full_name: 'Kouna Fall'
     }]
 
-    it('should return IPerson with full_name property personA.full_name === personB.full_name\n on each previous object', () => {
+    it('should return IPerson with full_name property on each previous object', () => {
       expect(persons.length).to.equal(expected.length)
       const comparePerson = (personA: IPerson, personB: IPerson) => {
         return personA.id === personB.id &&
@@ -161,6 +161,5 @@ describe('Array', () => {
       expect(persons[2].full_name).to.equal(expected[2].full_name)
       expect(comparePerson(persons[2], expected[2])).to.equal(true)
     })
-
   })
 })
