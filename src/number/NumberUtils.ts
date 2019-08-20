@@ -38,7 +38,6 @@ export class NumberUtils {
 
      }
     }
-      console.log(na);
       if (na.length==0) {
           throw new Error('Error when array is empty')
       }

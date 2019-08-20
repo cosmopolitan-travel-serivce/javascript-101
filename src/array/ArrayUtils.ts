@@ -25,11 +25,11 @@ class ArrayUtils {
                 first_name:persons[i].first_name,
                 last_name:persons[i].last_name.toUpperCase()
       })
-        }     
+        }
    return resul
     }
   /**
-   * @param 
+   * @param
    */
   static sortNumbers (t: number[]): number[] {
     let tmp;
@@ -64,8 +64,57 @@ class ArrayUtils {
   static sortByAge (t: IPerson[]): IPerson[] {
     return t
   }
+
+
+  static filterEven (t: number[]): number[] {
+    return []
+  }
+
+
+  static filterOdd (t: number[]): number[] {
+    return []
+  }
+
+
+  static filterDiv3 (t: number[]): number[] {
+    return []
+  }
+
+
+  static filterDiv4 (t: number[]): number[] {
+    return []
+  }
+
+
+  static filterDiv5 (t: number[]): number[] {
+    return []
+  }
+
+
+  static filterDiv10 (t: number[]): number[] {
+    return []
+  }
+
+
+  static filterDiv100 (t: number[]): number[] {
+    return []
+  }
+
+
+  static filterDiv1000 (t: number[]): number[] {
+    return []
+  }
+
+  static range (from: number, to: number): number[] {
+    let dump = []
+    for (let i = from; i <= to; i++) {
+      dump.push(i)
+    }
+    return dump
+  }
 }
 
-export class ArrayUtilsSolution extends ArrayUtils {}
+export class ArrayUtilsSolution extends ArrayUtils {
+}
 
 export default process.env.PERSON === 'buddy' ? ArrayUtilsSolution : ArrayUtils
