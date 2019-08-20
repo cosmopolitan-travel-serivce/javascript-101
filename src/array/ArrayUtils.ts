@@ -32,10 +32,6 @@ class ArrayUtils {
         return resul
     }
 
-    static personsWithFullName (persons: IPerson[]): IPerson[] {
-        return []
-    }
-
     /**
      * @param
      */
@@ -73,10 +69,6 @@ class ArrayUtils {
         return t
     }
 
-    static adults (t: IPerson[]): IPerson[] {
-        return []
-    }
-
     static range(from: number, to: number): number[] {
         let dump = []
         for (let i = from; i <= to; i++) {
@@ -84,9 +76,17 @@ class ArrayUtils {
         }
         return dump
     }
+
+    static adults (t: IPerson[]): IPerson[] {
+        return []
+    }
+
+    static personsWithFullName (persons: IPerson[]): IPerson[] {
+        return []
+    }
+
 }
 
-export class ArrayUtilsSolution extends ArrayUtils {
-}
+export class ArrayUtilsSolution extends ArrayUtils {}
 
 export default process.env.PERSON === 'buddy' ? ArrayUtilsSolution : ArrayUtils
