@@ -1,3 +1,4 @@
+import {kMaxLength} from "buffer";
 
 export class NumberUtils {
 
@@ -18,56 +19,60 @@ export class NumberUtils {
 
   /**
    * @throws Error when array is empty
-   * @param 
+   * @param t
    */
   static min (t: number[]): number {
-    const error:any = Error;
-    let na:any[] = [];
-    let tab:number[] = [];
-    let min: number = 0;
-    let i:number
-   /* if (t[0]== null) {
-      throw new Error('Error when array is empty')
-    }
-    for(let i= 0;i<t.length;i++) {
-      if(isNaN(t[i])) {
-        tab.push(t[i])
-        if(tab.length!=0) {
-          throw new Error('The elements of arrays contains a NaN')
-        }
-      }
-      na.push(!(isNaN(t[i])))
-    } 
-    for(let j =1 ;na.length;j++) {
-       if(na[0]==null) {
-         throw new Error('')
-       }
-       if(na[j]<min) {
-         min = na[j]
-       }
-    }
-    return min*/
-  
-    if (t[0]== null) {
-      throw new Error('Error when array is empty')
-    }
-    for (i = 0;i<t.length;i++) {
-      if(isNaN(t[i])) {
-        na.push(t[i])
-        if(na.length!=0) {
-          throw new Error('The elements of arrays contains a NaN')
-        }
+    let na:number[] = [];
+    let min: number;
+    let j:number = 0;
+    for (let i:number = 0;i<t.length;i++) {
+      if(!(isNaN(t[i]))) {
+        na = t.filter(function (tab,j) {
+            if (j<t.length) {
+                return t[j]
+            }
+
+
+        })
+
+
      }
-     if (t[i]<=t[0]) {
-      min = t[i]
     }
-  }
-  return min 
-}
-   
-    
+      console.log(na);
+      if (na.length==0) {
+          throw new Error('Error when array is empty')
+      }
+      min = na[0];
+      for (let k:number =1;k<na.length;k++) {
+          if (na[k]<min) {
+              min = na[k]
+          }
 
+      }
+            return min
+        }
 
+  /* if (t[0]== null) {
+        throw new Error('Error when array is empty')
+      }
+      for(let i= 0;i<t.length;i++) {
+        if(isNaN(t[i])) {
+          tab.push(t[i])
+          if(tab.length!=0) {
+            throw new Error('The elements of arrays contains a NaN')
+          }
+        }
+        na.push(!(isNaN(t[i])))
+      }
+      for(let j =1 ;na.length;j++) {
+         if(na[0]==null) {
+           throw new Error('')
+         }
+         if(na[j]<min) {
+           min = na[j]
+         }
+      }
+      return min*/
   /**
    * @throws Error when array is empty
    * @param t
@@ -102,8 +107,8 @@ export class NumberUtils {
     return b
   }
   static isPrime (n: number): boolean {
-    let b = Math.sqrt(n)
-    let a = 0
+    let b = Math.sqrt(n);
+    let a = 0;
     if (n<2) {
         return false
     }
@@ -114,7 +119,7 @@ export class NumberUtils {
         return false
     }
     for (let i = 3; i<b;i +=2) {
-        a = n%i
+        a = n%i;
         if (a==0) {
             return false
         }
