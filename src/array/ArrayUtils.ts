@@ -82,7 +82,6 @@ class ArrayUtils {
             }
         }
         return majeur
-
     }
 
     static range(from: number, to: number): number[] {
@@ -95,7 +94,18 @@ class ArrayUtils {
 
 
     static personsWithFullName (persons: IPerson[]): IPerson[] {
-        return []
+        let result : IPerson[] = [];
+        for (let i:number = 0; i < persons.length; i++) {
+                result.push({
+                    id: persons[i].id,
+                    first_name: persons[i].first_name,
+                    last_name: persons[i].last_name,
+                    age:persons[i].age,
+                    full_name:persons[i].first_name+" "+persons[i].last_name
+
+                })
+        }
+        return result
     }
 
 }

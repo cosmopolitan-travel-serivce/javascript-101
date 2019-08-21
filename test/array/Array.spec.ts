@@ -115,7 +115,6 @@ describe('Array', () => {
     })
   })
 
-
   describe('Person', () => {
     const persons: IPerson[] = ArrayUtils.personsWithFullName([{
       id: 1,
