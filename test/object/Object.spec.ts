@@ -4,7 +4,11 @@ const expect = require('chai').expect
 
 describe('Object', () => {
   let inputs: any[] = [{name:'Virginie Lamesse'},{name:'Zeynab Sarr'},{name:'Kine Sidibe'},{name:'Arona Sow'},{name:'Kine Sow'}
-  ,{name:'Kouna Fall'},{name:'Fatou Fall'}]
+  ,{name:'Kouna Fall'},{name:'Fatou Fall'}, {
+      name: 'Amadou Hampathé Ba'
+    }, {
+      name: 'Optimus MotherF Perseus Prime'
+    }]
   let results: IPerson[] = inputs.map((input: any) => ObjectUtils.getFirstNameAndLastNameFromName(input))
   let expected: IPerson[] = [{
     first_name: 'Virginie',
