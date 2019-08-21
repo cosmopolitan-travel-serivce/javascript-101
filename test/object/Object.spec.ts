@@ -54,4 +54,15 @@ describe('Object', () => {
       expect(results[index].first_name + ' ' + results[index].last_name).to.equal(inputs[index].name)
     })
   })
+
+  const input = {
+    name: 'John Doe',
+    age: 15,
+    zWorth: 'hundred'
+  }
+  const response = ObjectUtils.getFirstNameAndLastNameFromName(input)
+  it('should work when input have another property (the last property)', () => {
+    expect(response.first_name).to.equal('John')
+    expect(response.last_name).to.equal('Doe')
+  })
 })

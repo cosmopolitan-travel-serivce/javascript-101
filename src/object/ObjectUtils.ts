@@ -19,6 +19,13 @@ export class ObjectUtils {
 
 
 export class ObjectUtilsSolution extends ObjectUtils {
+  static getFirstNameAndLastNameFromName (input: any): IPerson {
+    const parts: string[] = input.name.split(' ')
+    return {
+      first_name: parts.slice(0, parts.length - 1).join(' '),
+      last_name: parts[parts.length - 1],
+    }
+  }
 }
 
 export default process.env.PERSON === 'buddy' ? ObjectUtilsSolution : ObjectUtils
