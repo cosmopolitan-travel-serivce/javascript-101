@@ -27,6 +27,12 @@ describe('Object', () => {
   }, {
     first_name: 'Fatou',
     last_name: 'Fall'
+  }, {
+    first_name: 'Amadou Hampathé',
+    last_name: 'Ba'
+  }, {
+    first_name: 'Optimus MotherF Perseus',
+    last_name: 'Prime'
   }]
   it('when used on array should return same number of inputs', () => {
     console.log('expected: %s, results: %s', expected.length, results.length)
