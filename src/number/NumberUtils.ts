@@ -101,4 +101,4 @@ export class NumberUtilsSolution extends NumberUtils {
 }
 
 
-export default process.env.PERSON === 'buddy' ? NumberUtilsSolution : NumberUtilsSolution
+export default process.env.PERSON === 'buddy' ? NumberUtilsSolution : NumberUtils
