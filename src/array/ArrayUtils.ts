@@ -1,10 +1,8 @@
 import IPerson from '../interface/IPerson';
-import dotenv from 'dotenv'
+import env from 'dotenv';
 
-dotenv.config()
-
+env.config();
 class ArrayUtils {
-
     /**
      * @param persons
      * @returns string[]
@@ -20,16 +18,15 @@ class ArrayUtils {
      * @param persons
      */
     static personsWithLastNameUpperCased(persons: IPerson[]): IPerson[] {
-        let i: number
-        let resul : IPerson[] = []
-        for (i = 0; i < persons.length; i++) {
-            resul.push({
+        let result : IPerson[] = [];
+        for (let i:number = 0; i < persons.length; i++) {
+            result.push({
                 id: persons[i].id,
                 first_name: persons[i].first_name,
                 last_name: persons[i].last_name.toUpperCase()
             })
         }
-        return resul
+        return result
     }
 
     /**
@@ -40,8 +37,8 @@ class ArrayUtils {
         for (let i = 0; i < t.length; i++) {
             for (let min = i; min < t.length; min++) {
                 if (t[min] < t[i]) {
-                    tmp = t[i]
-                    t[i] = t[min]
+                    tmp = t[i];
+                    t[i] = t[min];
                     t[min] = tmp
                 }
             }
@@ -70,10 +67,10 @@ class ArrayUtils {
     }
 
     static adults (t: IPerson[]): IPerson[] {
-        let majeur : IPerson[] = [];
+        let adults: IPerson[] = [];
         for (let i:number = 0; i < t.length; i++) {
             if (t[i].age!>=18) {
-                majeur.push({
+                adults.push({
                     id: t[i].id,
                     first_name: t[i].first_name,
                     last_name: t[i].last_name,
@@ -81,18 +78,15 @@ class ArrayUtils {
                 })
             }
         }
-        return majeur
+        return adults
     }
-
     static range(from: number, to: number): number[] {
-        let dump = []
+        let dump = [];
         for (let i = from; i <= to; i++) {
             dump.push(i)
         }
         return dump
     }
-
-
     static personsWithFullName (persons: IPerson[]): IPerson[] {
         let result : IPerson[] = [];
         for (let i:number = 0; i < persons.length; i++) {

@@ -1,5 +1,4 @@
 import IPerson from "../interface/IPerson";
-
 export class ObjectUtils {
 
   /**
@@ -9,15 +8,13 @@ export class ObjectUtils {
    */
   static getFirstNameAndLastNameFromName (input: any): IPerson {
     // {name:'Virgine Lamesse'}
+    let names:string[] = input.name.split(' ');
     return {
-      first_name: '',
-      last_name: '',
+      first_name: names.slice(0,names.length-1).join(' '),
+      last_name: names[names.length-1],
     }
   }
 }
-
-
-
 export class ObjectUtilsSolution extends ObjectUtils {
   static getFirstNameAndLastNameFromName (input: any): IPerson {
     const parts: string[] = input.name.split(' ')
