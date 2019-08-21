@@ -8,16 +8,13 @@ export class ObjectUtils {
    */
   static getFirstNameAndLastNameFromName (input: any): IPerson {
     // {name:'Virgine Lamesse'}
-    let name:string[] =input.name.split(' ');
+    let lastName:string[] = input.name.split(' ');
     return {
-      first_name: name.slice(0,name.length-1).join(' '),
-      last_name: name[name.length-1],
+      first_name: lastName.slice(0,lastName.length-1).join(' '),
+      last_name: lastName[lastName.length-1],
     }
   }
 }
-
-
-
 export class ObjectUtilsSolution extends ObjectUtils {
   static getFirstNameAndLastNameFromName (input: any): IPerson {
     const parts: string[] = input.name.split(' ')
